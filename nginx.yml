@@ -1,6 +1,6 @@
 ---
-# ANSIBLE PLAYBOOK
-- hosts: all
+- name: MEAN Server Play
+  hosts: all
   tasks:
     - name: Installs nginx web server
       # Update package cache and then install nginx
