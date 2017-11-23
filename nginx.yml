@@ -1,0 +1,15 @@
+---
+# ANSIBLE PLAY (Group of tasks that are performed on a certain set of hosts)
+- hosts: hosts
+  tasks:
+    - name: Installs nginx web server
+      # Update package cache and then install nginx
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        # Notify start nginx handler - starts nginx after it's installed
+        # Only triggers when something is changed
+        - start nginx
+
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started
