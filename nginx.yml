@@ -1,5 +1,7 @@
 ---
 - name: MEAN Server Play
+  become: true
+  become_user: root
   hosts: all
   tasks:
     - name: Installs nginx web server
