@@ -1,5 +1,5 @@
 ---
-# ANSIBLE PLAY (Group of tasks that are performed on a certain set of hosts)
+# ANSIBLE PLAYBOOK
 - hosts: all
   tasks:
     - name: Installs nginx web server
