@@ -17,3 +17,6 @@ Run playbook on filtered inventory
 - https://www.digitalocean.com/community/tutorials/how-to-use-ansible-roles-to-abstract-your-infrastructure-environment
 - https://www.digitalocean.com/community/tutorials/how-to-manage-multistage-environments-with-ansible
 - https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data-on-ubuntu-16-04
+
+# Notes
+- Having Apache2 running may cause errors while installing Nginx (https://askubuntu.com/questions/764222/nginx-installation-error-in-ubuntu-16-04)
