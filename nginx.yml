@@ -14,7 +14,7 @@
 
     - name: Upload default index.php
       # Replace default index.php file with static resource
-      copy: src=static-files/index.php dest=/usr/share/nginx/www/ mode=0644
+      copy: src=static-files/index.php dest=/var/www/html/ mode=0644
       # Log if action was succesful
       register: php
       # Ignore errors to prevent play from aborting
@@ -22,12 +22,12 @@
 
       # Remove index.html if transfer was succesful
     - name: Remove index.html from host
-      command: rm /usr/share/nginx/www/index.html
+      command: rm /var/www/html/index.html
       when: php|success
 
       # Upload index.html if transfer failed
     - name: Upload default index.html
-      copy: src=static-files/index.html dest=/usr/share/nginx/www/ mode=0644
+      copy: src=static-files/index.html dest=/var/www/html/ mode=0644
       when: php|failed
 
   handlers:
