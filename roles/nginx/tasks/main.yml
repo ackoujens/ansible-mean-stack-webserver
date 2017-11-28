@@ -1,5 +1,5 @@
 ---
-- name: Installs nginx web server
+- name: Install
   # Update package cache and then install nginx
   apt: pkg=nginx state=installed update_cache=true
   notify:
