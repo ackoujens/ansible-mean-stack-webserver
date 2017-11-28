@@ -3,5 +3,10 @@
   become: true
   become_user: root
   hosts: all
+  vars:
+    temp_folder: /tmp
   roles:
+    - git
     - nginx
+    - mongodb
+    - nodejs
