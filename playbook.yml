@@ -1,5 +1,5 @@
 ---
-- name: MEAN Server Play
+- name: MEAN Server
   become: true
   become_user: root
   hosts: all
