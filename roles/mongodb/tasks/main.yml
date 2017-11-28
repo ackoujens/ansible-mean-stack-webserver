@@ -1,0 +1,17 @@
+---
+- name: Add repository
+  apt_repository:
+    filename: '/etc/apt/sources.list.d/mongodb-org/3.2 multiverse'
+    state: present
+    update_cache: yes
+
+- name: Install MongoDB
+  apt:
+    name: mongodb-org
+    state: present
+    update_cache: yes
+
+- name: Ensure that MongoDB is running
+  service:
+    name: mongodb
+    state: started
