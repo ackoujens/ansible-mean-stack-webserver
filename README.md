@@ -21,6 +21,8 @@ Run playbook on filtered inventory
 - https://www.digitalocean.com/community/tutorials/how-to-manage-multistage-environments-with-ansible
 - https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data-on-ubuntu-16-04
 - http://yannickloriot.com/2016/04/install-mongodb-and-node-js-on-a-raspberry-pi/
+- http://pm2.keymetrics.io/docs/usage/process-management/
+- https://www.mbejda.com/deploying-node-applications-with-ansible/
 
 # Notes
 - Having Apache2 running may cause errors while installing Nginx (https://askubuntu.com/questions/764222/nginx-installation-error-in-ubuntu-16-04)

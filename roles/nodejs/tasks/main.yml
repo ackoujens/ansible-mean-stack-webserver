@@ -23,8 +23,19 @@
     - build-essential
     - nodejs
 
-- name: Install boxer and gulp globally
+- name: Install bower and gulp globally
   npm: name={{ item }} state=present global=yes
   with_items:
     - bower
     - gulp
+
+- name: Upload default app.js
+  copy: src=static-files/app.js dest=/home/pi/dev/node/ mode=0644
+
+- name: Install pm2
+  npm: name=pm2 global=yes production=yes
+
+- name: Start app
+  command: pm2 start app.js --name app chdir=/home/pi/dev/node
+  ignore_errors: yes
+  #when: npm_finished.changed
