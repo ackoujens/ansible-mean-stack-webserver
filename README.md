@@ -2,10 +2,9 @@
 
 ## How to use
 Run playbook on entire inventory
-`ansible-playbook nginx.yml`
+`ansible-playbook playbook.yml --ask-pass`
 
-Run playbook on filtered inventory
-`ansible-playbook -i hosts nginx.yml`
+Browse for http://10.0.0.3:3000
 
 ## To do
 - Abstract hosts.yml file from play
