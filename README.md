@@ -8,10 +8,12 @@ Browse for http://10.0.0.3:3000
 
 ## To do
 - Abstract hosts.yml file from play
-- Seperating vars from playbook
+- Separating vars from playbook
 - Notifying user where to view nginx test
-- Setting up nodejs example project
 - Notifying user where to view nodejs test
+- Deploy and run Angular app
+- Deploy and run Keystone app
+- Deploy MongoDB database
 
 ## Resources
 - https://www.digitalocean.com/community/tutorials/how-to-create-ansible-playbooks-to-automate-system-configuration-on-ubuntu
