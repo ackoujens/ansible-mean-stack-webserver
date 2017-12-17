@@ -1,0 +1,8 @@
+---
+- name: Angular app
+  copy:
+    src: "{{ item }}"
+    dest: /var/www/html/
+    mode: 644
+  with_fileglob:
+    - {{ role_path }}/dist/*
