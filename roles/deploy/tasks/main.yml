@@ -1,8 +1,21 @@
 ---
-- name: Angular app
+- name: Migrating DB
   copy:
     src: "{{ item }}"
-    dest: /var/www/html/
+    dest:
+
+- name: Deploying Keystone Backend
+  copy:
+    src: "{{ item }}"
+    dest: /var/www/admin.volvovalorvlogs.com/html
     mode: 644
   with_fileglob:
-    - {{ role_path }}/dist/*
+    - {{ role_path }}/admin.volvovalor.com/*
+
+- name: Deploying Angular Frontend
+  copy:
+    src: "{{ item }}"
+    dest: /var/www/volvovalor.com/html
+    mode: 644
+  with_fileglob:
+    - {{ role_path }}/volvovalor.com/*
