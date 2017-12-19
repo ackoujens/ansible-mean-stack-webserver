@@ -14,6 +14,7 @@ Browse for http://10.0.0.3:3000
 - Deploy and run Angular app
 - Deploy and run Keystone app
 - Deploy MongoDB database
+- Alter /etc/nginx/nginx.conf to include server_names_hash_bucket_size
 
 ## Resources
 - https://www.digitalocean.com/community/tutorials/how-to-create-ansible-playbooks-to-automate-system-configuration-on-ubuntu
