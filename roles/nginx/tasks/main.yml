@@ -1,10 +1,10 @@
 ---
 - name: Install
-  # Update package cache and then install nginx
-  apt: pkg=nginx state=installed update_cache=true
+  apt:
+    pkg: nginx
+    state: latest
+    update_cache: true
   notify:
-    # Notify start nginx handler - starts nginx after it's installed
-    # Only triggers when something is changed
     - start nginx
 
 # Testing conditional results
@@ -22,6 +22,6 @@
 #  when: php|success
 
   # Upload index.html if transfer failed
-- name: Upload default index.html
-  copy: src=static-files/index.html dest=/var/www/html/ mode=0644
+#- name: Upload default index.html
+#  copy: src=static-files/index.html dest=/var/www/html/ mode=0644
 #  when: php|failed
