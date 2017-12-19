@@ -2,5 +2,5 @@
 - name: Install
   apt:
     name: git
-    state: present
+    state: latest
     update_cache: yes
