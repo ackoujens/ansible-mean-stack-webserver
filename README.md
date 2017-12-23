@@ -1,30 +1,25 @@
-# ansible-mean-stack-webserver
+# Ansible MEAN-stack Webserver
 
 ## How to use
 Run playbook on entire inventory
-`ansible-playbook playbook.yml --ask-pass`
+`ansible-playbook provision.yml --ask-pass`
+`ansible-playbook deploy.yml --ask-pass "ansible_sudo_pass=LOCAL_SUDO_PASS"`
 
-Browse for http://10.0.0.3:3000
+## Todo
+- Ensure Apache2 isn't running before installing nginx / uninstall apache2
 
-## To do
-- Abstract hosts.yml file from play
-- Separating vars from playbook
-- Notifying user where to view nginx test
-- Notifying user where to view nodejs test
-- Deploy and run Angular app
-- Deploy and run Keystone app
-- Deploy MongoDB database
 - Alter /etc/nginx/nginx.conf to include server_names_hash_bucket_size
 
-## Resources
-- https://www.digitalocean.com/community/tutorials/how-to-create-ansible-playbooks-to-automate-system-configuration-on-ubuntu
-- https://www.digitalocean.com/community/tutorials/configuration-management-101-writing-ansible-playbooks
-- https://www.digitalocean.com/community/tutorials/how-to-use-ansible-roles-to-abstract-your-infrastructure-environment
-- https://www.digitalocean.com/community/tutorials/how-to-manage-multistage-environments-with-ansible
-- https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data-on-ubuntu-16-04
-- http://yannickloriot.com/2016/04/install-mongodb-and-node-js-on-a-raspberry-pi/
-- http://pm2.keymetrics.io/docs/usage/process-management/
-- https://www.mbejda.com/deploying-node-applications-with-ansible/
+- Backup MongoDB database
+- Deploy MongoDB database
+
+- Deploy Keystone project
+- Run Keystone project with pm2
+
+- Deploy Angular project
+
+- Abstract hosts.yml file from play
+- Separating vars from playbook
 
 # Notes
 - Having Apache2 running may cause errors while installing Nginx (https://askubuntu.com/questions/764222/nginx-installation-error-in-ubuntu-16-04)
