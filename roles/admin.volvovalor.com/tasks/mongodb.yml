@@ -1,0 +1,15 @@
+---
+- name: DB dump
+  local_action: command mongodump --db volvo-valor -o {{ role_path }}/db
+
+- name: Drop remote DB
+  command: mongo volvo-valor --eval "db.dropDatabase()"
+
+# FIXME Synchronisation module asking password during play
+- name: DB migrate
+  synchronize:
+    src: "{{ role_path }}/db/volvo-valor"
+    dest: /var/lib/mongodb/dump/
+
+- name: DB restore
+  command: mongorestore --db volvo-valor /var/lib/mongodb/dump/volvo-valor

@@ -1,0 +1,15 @@
+---
+- name: Create Keystone directory
+  file:
+    path: /var/www/admin.volvovalor.com/html
+    state: directory
+
+# FIXME Synchronisation module asking password during play
+- name: Deploying Keystone Backend
+  synchronize:
+    src: "{{ role_path }}/dist/admin.volvovalor.com/"
+    dest: /var/www/admin.volvovalor.com/html/
+
+- name: Starting Keystone Backend
+  command: pm2 start keystone.js --name Keystone chdir=/var/www/admin.volvovalor.com/html
+  ignore_errors: yes
