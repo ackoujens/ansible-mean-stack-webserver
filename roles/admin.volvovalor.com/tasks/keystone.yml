@@ -10,6 +10,9 @@
     src: "{{ role_path }}/dist/admin.volvovalor.com/"
     dest: /var/www/admin.volvovalor.com/html/
 
-- name: Starting Keystone Backend
-  command: pm2 start keystone.js --name Keystone chdir=/var/www/admin.volvovalor.com/html
+- name: Delete old pm2 process
+  command: pm2 delete Keystone
   ignore_errors: yes
+
+- name: Starting Keystone Backend
+  command: chdir=/var/www/admin.volvovalor.com/html pm2 start keystone.js --name Keystone
