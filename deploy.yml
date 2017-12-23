@@ -1,0 +1,7 @@
+---
+- name: MEAN Server Deploy
+  become: true
+  become_user: root
+  hosts: all
+  roles:
+    - admin.volvovalor.com
