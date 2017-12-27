@@ -3,20 +3,18 @@
 ## How to use
 Run playbook on entire inventory
 `ansible-playbook provision.yml --ask-pass`
-`ansible-playbook deploy.yml --ask-pass "ansible_sudo_pass=LOCAL_SUDO_PASS"`
+`ansible-playbook deploy.yml --ask-pass "ansible_become_pass=LOCAL_SUDO_PASS"`
 
 ## Todo
+- Run provisioning on clean install for testing
+
 - Ensure Apache2 isn't running before installing nginx / uninstall apache2
 
 - Alter /etc/nginx/nginx.conf to include server_names_hash_bucket_size
 
-- Backup MongoDB database
-- Deploy MongoDB database
-
-- Deploy Keystone project
-- Run Keystone project with pm2
-
 - Deploy Angular project
+
+- Implement ddclient install and provisioning
 
 - Abstract hosts.yml file from play
 - Separating vars from playbook
