@@ -1,4 +1,9 @@
 ---
+- name: Ensure mongodb is running
+  service:
+    name: mongodb
+    state: started
+
 - name: DB dump
   local_action: command mongodump --db volvo-valor -o {{ role_path }}/db
 
